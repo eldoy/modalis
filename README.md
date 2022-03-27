@@ -4,7 +4,7 @@ Modal dialog. Based on [Micromodal](https://github.com/Ghosh/micromodal)
 
 ### Usage
 
-First copy `dialog.css` and `app.js` to your app assets.
+First copy `dialog.css` and `app.js` to your app assets. See `app/layouts/dialog.js` for some working HTML you can use.
 
 Add an empty div tag with the class name `dialog` in your layout:
 ```html
@@ -21,5 +21,14 @@ To open the dialog add an element like this:
 </button>
 ```
 The `data-dialog` is the selector of your dialog. If you want to load HTML into the dialog, use `data-href` and add the path there.
+
+To close the dialog use `closeDialog`:
+```html
+<button
+  onclick="closeDialog(this)"
+  data-dialog=".dialog">
+  Close
+</button>
+```
 
 MIT Licensed. Enjoy!

@@ -12,7 +12,7 @@ module.exports = async function() {
     <section>${text()}</section>
     <div class="dialog"></div>
     <script>
-      document.querySelector('button').click()
+      // document.querySelector('button').click()
     </script>
   `)
 }

@@ -16,5 +16,5 @@ module.exports = function(){
   Sunt, asperiores. In odio neque, sit debitis dolores voluptatibus dolor, voluptates minima nulla itaque aliquid doloribus asperiores. Quaerat quis pariatur, hic vitae iste deserunt officia possimus, molestiae cumque nobis consequuntur.
 
   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus molestiae vitae placeat voluptate quo vel tempore, temporibus nemo voluptatem, voluptates a. Rerum officiis maxime architecto cupiditate laboriosam consequuntur assumenda ratione!
-`.split('\n').join('<br><br>')
+`.split('\n').join('<br>')
 }
