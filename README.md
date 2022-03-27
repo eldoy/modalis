@@ -1,6 +1,6 @@
 # Dialogis
 
-Modal dialog. Based on [Micromodal](https://github.com/Ghosh/micromodal)
+Modal dialog with built in loading of HTML.
 
 ### Usage
 
