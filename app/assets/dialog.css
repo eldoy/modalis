@@ -22,7 +22,7 @@
 }
 
 .dialog .dialog-header {
-  background: olive;
+  background: gold;
   text-align: right;
   padding: 0.3rem;
 }
@@ -32,4 +32,9 @@
   min-height: 100px;
   max-height: 90vh;
   overflow-y: scroll;
+}
+
+/* Disable scroll */
+body.dialog-open {
+  overflow: hidden;
 }
