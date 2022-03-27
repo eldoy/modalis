@@ -22,6 +22,16 @@ To open the dialog add an element like this:
 ```
 The `data-dialog` is the selector of your dialog. If you want to load HTML into the dialog, use `data-href` and add the path there.
 
+Using a link the modal dialog will be filled with the contents of the `href` attribute:
+```html
+<a
+  onclick="openDialog(this);return false"
+  data-dialog=".dialog"
+  href="/dialog">
+  Open dialog
+</a>
+```
+
 To close the dialog use `closeDialog`:
 ```html
 <button
