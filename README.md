@@ -41,4 +41,10 @@ To close the dialog use `closeDialog`:
 </button>
 ```
 
+or you can close it programmatically like this:
+```js
+// Pass selector of dialog element
+closeDialog('.dialog')
+```
+
 MIT Licensed. Enjoy!

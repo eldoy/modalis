@@ -1,6 +1,8 @@
-async function openDialog(el) {
+window.openDialog = async function(el) {
   // Find dialog element
-  var name = el.getAttribute('data-dialog')
+  var name = typeof el == 'string'
+    ? el
+    : el.getAttribute('data-dialog')
   var dialog = document.querySelector(name || '.dialog')
   if (!dialog) return
   dialog.style.display = 'block'
@@ -21,9 +23,11 @@ async function openDialog(el) {
   window.scrollPosition = window.scrollY
 }
 
-function closeDialog(el) {
+window.closeDialog = function(el) {
   // Find dialog element
-  var name = el.getAttribute('data-dialog')
+  var name = typeof el == 'string'
+    ? el
+    : el.getAttribute('data-dialog')
   var dialog = document.querySelector(name || '.dialog')
   if (!dialog) return
 
