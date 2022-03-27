@@ -1,0 +1,35 @@
+.dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.dialog .dialog-frame {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.dialog .dialog-border {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 1rem;
+  overflow: hidden;
+}
+
+.dialog .dialog-header {
+  background: olive;
+  text-align: right;
+  padding: 0.3rem;
+}
+
+.dialog .dialog-content {
+  padding: 1rem;
+  min-height: 100px;
+  max-height: 90vh;
+  overflow-y: scroll;
+}

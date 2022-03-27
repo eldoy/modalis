@@ -1,0 +1,16 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+body {
+  padding: 1rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+}
+main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+section {
+  margin: 2rem 0 0;
+}
