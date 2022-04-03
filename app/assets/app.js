@@ -18,6 +18,15 @@ window.openDialog = async function(el) {
     dialog.innerHTML = html
   }
 
+  // Load scripts
+  var scripts = dialog.querySelectorAll('script')
+  scripts.forEach(function(script) {
+    if (!script.loaded) {
+      script.loaded = true
+      eval(script.textContent)
+    }
+  })
+
   // Disable scroll
   document.body.classList.add('dialog-open')
   window.scrollPosition = window.scrollY
