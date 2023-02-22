@@ -1,50 +1,50 @@
-# Dialogis
+# Modalis
 
 Modal dialog with built in loading of HTML.
 
 ### Usage
 
-First copy `dialog.css` and `app.js` to your app assets. See `app/layouts/dialog.js` for some working HTML you can use.
+First copy `modal.css` and `app.js` to your app assets. See `app/layouts/modal.js` for some working HTML you can use.
 
-Add an empty div tag with the class name `dialog` in your layout:
+Add an empty div tag with the class name `modal` in your layout:
 ```html
-<div class="dialog"></div>
+<div class="modal"></div>
 ```
 
-To open the dialog add an element like this:
+To open the modal add an element like this:
 ```html
 <button
-  onclick="openDialog(this)"
-  data-dialog=".dialog"
-  data-href="/dialog">
-  Open dialog
+  onclick="openModal(this)"
+  data-modal=".modal"
+  data-href="/modal">
+  Open modal
 </button>
 ```
-The `data-dialog` is the selector of your dialog. If you want to load HTML into the dialog, use `data-href` and add the path there.
+The `data-modal` is the selector of your modal. If you want to load HTML into the modal, use `data-href` and add the path there.
 
-Using a link the modal dialog will be filled with the contents of the `href` attribute:
+Using a link the modal modal will be filled with the contents of the `href` attribute:
 ```html
 <a
-  onclick="openDialog(this);return false"
-  data-dialog=".dialog"
-  href="/dialog">
-  Open dialog
+  onclick="openModal(this);return false"
+  data-modal=".modal"
+  href="/modal">
+  Open modal
 </a>
 ```
 
-To close the dialog use `closeDialog`:
+To close the modal use `closeModal`:
 ```html
 <button
-  onclick="closeDialog(this)"
-  data-dialog=".dialog">
+  onclick="closeModal(this)"
+  data-modal=".modal">
   Close
 </button>
 ```
 
 or you can close it programmatically like this:
 ```js
-// Pass selector of dialog element
-closeDialog('.dialog')
+// Pass selector of modal element
+closeModal('.modal')
 ```
 
 MIT Licensed. Enjoy!

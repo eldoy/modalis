@@ -1,11 +1,9 @@
-window.openDialog = async function(el) {
-  // Find dialog element
-  var name = typeof el == 'string'
-    ? el
-    : el.getAttribute('data-dialog')
-  var dialog = document.querySelector(name || '.dialog')
-  if (!dialog) return
-  dialog.style.display = 'block'
+window.openModal = async function (el) {
+  // Find modal element
+  var name = typeof el == 'string' ? el : el.getAttribute('data-modal')
+  var modal = document.querySelector(name || '.modal')
+  if (!modal) return
+  modal.style.display = 'block'
 
   // Load content
   var href = el.getAttribute('data-href') || el.href
@@ -15,12 +13,12 @@ window.openDialog = async function(el) {
       html = await fetch(href)
       html = await html.text()
     } catch (e) {}
-    dialog.innerHTML = html
+    modal.innerHTML = html
   }
 
   // Load scripts
-  var scripts = dialog.querySelectorAll('script')
-  scripts.forEach(function(script) {
+  var scripts = modal.querySelectorAll('script')
+  scripts.forEach(function (script) {
     if (!script.loaded) {
       script.loaded = true
       eval(script.textContent)
@@ -28,24 +26,22 @@ window.openDialog = async function(el) {
   })
 
   // Disable scroll
-  document.body.classList.add('dialog-open')
+  document.body.classList.add('modal-open')
   window.scrollPosition = window.scrollY
 }
 
-window.closeDialog = function(el) {
-  // Find dialog element
-  var name = typeof el == 'string'
-    ? el
-    : el.getAttribute('data-dialog')
-  var dialog = document.querySelector(name || '.dialog')
-  if (!dialog) return
+window.closeModal = function (el) {
+  // Find modal element
+  var name = typeof el == 'string' ? el : el.getAttribute('data-modal')
+  var modal = document.querySelector(name || '.modal')
+  if (!modal) return
 
   // Reset content
-  dialog.style.display = 'none'
-  dialog.textContent = ''
+  modal.style.display = 'none'
+  modal.textContent = ''
 
   // Enable scroll
-  document.body.classList.remove('dialog-open')
+  document.body.classList.remove('modal-open')
   if (window.scrollPosition) {
     window.scrollTo(0, window.scrollPosition)
   }
