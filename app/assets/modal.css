@@ -35,6 +35,10 @@
   overflow-y: scroll;
 }
 
+.modal-layout {
+  display: none;
+}
+
 /* Disable scroll */
 body.modal-open {
   overflow: hidden;

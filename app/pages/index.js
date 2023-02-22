@@ -15,7 +15,7 @@ module.exports = async function () {
     >
       Open modal with content from the DOM
     </button>
-    <div class="content">${text()}</div>
+    <div class="content" style="display:none">${text()}</div>
     <div class="modal"></div>
     <div class="modal-layout">${modal()}</div>
   `)
