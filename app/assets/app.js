@@ -1,4 +1,8 @@
 window.openModal = async function (el) {
+  // Disable scroll
+  window.scrollPosition = window.scrollY
+  document.body.classList.add('modal-open')
+
   // Find modal element
   var name = typeof el == 'string' ? el : el.getAttribute('data-modal')
   var modal = document.querySelector(name || '.modal')
@@ -37,9 +41,8 @@ window.openModal = async function (el) {
     }
   })
 
-  // Disable scroll
-  document.body.classList.add('modal-open')
-  window.scrollPosition = window.scrollY
+  // Scroll background
+  window.scrollTo(0, window.scrollPosition)
 }
 
 window.closeModal = function (el) {
