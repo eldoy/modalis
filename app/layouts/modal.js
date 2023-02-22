@@ -5,7 +5,7 @@ module.exports = function (content) {
         <div class="modal-header">
           <button onclick="closeModal(this)" data-modal=".modal">Close</button>
         </div>
-        <div class="modal-content">${content}</div>
+        <div class="modal-content">${content || ''}</div>
       </div>
     </div>
   `

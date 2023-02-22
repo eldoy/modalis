@@ -5,6 +5,18 @@ window.openModal = async function (el) {
   if (!modal) return
   modal.style.display = 'block'
 
+  // Load from DOM
+  var source = el.getAttribute('data-source')
+  if (source) {
+    var node = document.querySelector(source)
+    var layout = el.getAttribute('modal-layout') || '.modal-layout'
+    var frame = document.querySelector(layout)
+    var clone = frame.cloneNode(true)
+    var content = clone.querySelector('.modal-content')
+    content.innerHTML = node.innerHTML
+    modal.innerHTML = clone.innerHTML
+  }
+
   // Load content
   var href = el.getAttribute('data-href') || el.href
   if (href) {
