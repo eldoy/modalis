@@ -17,8 +17,9 @@ window.openModal = async function (el) {
     var frame = document.querySelector(layout)
     var clone = frame.cloneNode(true)
     var content = clone.querySelector('.modal-content')
-    content.innerHTML = node.innerHTML
-    modal.innerHTML = clone.innerHTML
+    content.appendChild(node.firstElementChild)
+    modal.appendChild(clone.firstElementChild)
+    window.modalSource = source
   }
 
   // Load content
@@ -50,6 +51,14 @@ window.closeModal = function (el) {
   var name = typeof el == 'string' ? el : el.getAttribute('data-modal')
   var modal = document.querySelector(name || '.modal')
   if (!modal) return
+
+  // Move content back to source
+  var source = window.modalSource
+  if (source) {
+    var node = document.querySelector(source)
+    var content = modal.querySelector('.modal-content')
+    node.appendChild(content.firstElementChild)
+  }
 
   // Reset content
   modal.style.display = 'none'

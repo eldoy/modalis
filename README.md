@@ -38,7 +38,7 @@ Using a link the modal modal will be filled with the contents of the `href` attr
 </a>
 ```
 
-### Load modal content from DOM
+### Insert modal content from DOM
 
 To load insert content from the DOM, use `data-source`:
 
@@ -80,6 +80,16 @@ The default selector for the modal layout is `.modal-layout`, but you can specif
 >
   Open modal
 </button>
+```
+
+The source of the modal content should only have 1 root element:
+
+```html
+<div id="content" style="display:none">
+  <div id="root">
+    The content to be inserted goes here.
+  </div>
+</div>
 ```
 
 ### Close the modal
