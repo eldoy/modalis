@@ -20,6 +20,8 @@ window.openModal = async function (el) {
     content.appendChild(node.firstElementChild)
     modal.appendChild(clone.firstElementChild)
     window.modalSource = source
+  } else {
+    delete window.modalSource
   }
 
   // Load content
@@ -66,6 +68,7 @@ window.closeModal = function (el) {
     var content = modal.querySelector('.modal-content')
     node.appendChild(content.firstElementChild)
   }
+  delete window.modalSource
 
   // Reset content
   modal.style.display = 'none'
