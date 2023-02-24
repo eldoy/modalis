@@ -33,6 +33,13 @@ window.openModal = async function (el) {
     modal.innerHTML = html
   }
 
+  // Set title
+  var text = el.getAttribute('data-title')
+  if (text) {
+    var title = modal.querySelector('.modal-title')
+    if (title) title.innerHTML = text
+  }
+
   // Load scripts
   var scripts = modal.querySelectorAll('script')
   scripts.forEach(function (script) {

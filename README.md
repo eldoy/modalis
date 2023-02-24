@@ -92,6 +92,25 @@ The source of the modal content should only have 1 root element:
 </div>
 ```
 
+### Set modal title
+
+To set or override the modal title, use the `data-title` attribute on your toggler:
+
+```html
+<button
+  onclick="openModal(this)"
+  data-title="Modal title"
+  data-modal=".modal"
+  data-source=".content"
+  data-layout=".my-layout"
+>
+  Open modal
+</button>
+```
+
+This is dependent on an element with a `modal-title` class in your modal layout.
+
+
 ### Close the modal
 
 To close the modal use `closeModal`:
