@@ -1,5 +1,5 @@
 {
-  "name": "dialogis",
+  "name": "modalis",
   "version": "0.1.0",
   "description": "Modal dialog with built in loading of assets",
   "main": "index.js",
