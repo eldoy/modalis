@@ -4,7 +4,7 @@ Modal dialog with built in loading of HTML.
 
 ### Usage
 
-First copy `modal.css` and `app.js` to your app assets. See `app/layouts/modal.js` for some working HTML you can use.
+First copy `app/assets/modal.css` and `app/assets/app.js` to your app assets. See `app/layouts/modal.js` for some working HTML you can use.
 
 Add an empty div tag with the class name `modal` in your layout:
 ```html
