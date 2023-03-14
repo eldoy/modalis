@@ -1,4 +1,4 @@
-window.openModal = async function (el) {
+window.openModal = async function (el, fn) {
   // Disable scroll
   window.scrollPosition = window.scrollY
   document.body.classList.add('modal-open')
@@ -55,6 +55,11 @@ window.openModal = async function (el) {
 
   // Scroll background
   window.scrollTo(0, window.scrollPosition)
+
+  // Run callback function
+  if (typeof fn == 'function') {
+    await fn()
+  }
 
   // Trap focus
   var focusable = modal.querySelectorAll(
