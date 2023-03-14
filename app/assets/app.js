@@ -16,11 +16,11 @@ window.openModal = async function (el, fn) {
     var node = document.querySelector(source)
     var layout = el.getAttribute('modal-layout') || '.modal-layout'
     var frame = document.querySelector(layout)
-    var clone = frame.cloneNode(true)
-    clone.classList.add('modal-current')
-    var content = clone.querySelector('.modal-content')
+    var current = frame.cloneNode(true)
+    current.classList.add('modal-current')
+    var content = current.querySelector('.modal-content')
     content.appendChild(node.firstElementChild)
-    modal.appendChild(clone.firstElementChild)
+    modal.appendChild(current.firstElementChild)
     window.modalSource = node
   } else {
     delete window.modalSource
