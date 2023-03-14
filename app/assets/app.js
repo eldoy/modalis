@@ -8,6 +8,7 @@ window.openModal = async function (el) {
   var modal = document.querySelector(name || '.modal')
   if (!modal) return
   modal.style.display = 'block'
+  modal.classList.add('modal-current')
 
   // Load from DOM
   var source = el.getAttribute('data-source')
@@ -16,6 +17,7 @@ window.openModal = async function (el) {
     var layout = el.getAttribute('modal-layout') || '.modal-layout'
     var frame = document.querySelector(layout)
     var clone = frame.cloneNode(true)
+    clone.classList.add('modal-current')
     var content = clone.querySelector('.modal-content')
     content.appendChild(node.firstElementChild)
     modal.appendChild(clone.firstElementChild)
@@ -27,12 +29,12 @@ window.openModal = async function (el) {
   // Load content
   var href = el.getAttribute('data-href') || el.href
   if (href) {
-    var html = ''
+    var content = ''
     try {
-      html = await fetch(href)
-      html = await html.text()
+      content = await fetch(href)
+      content = await content.text()
     } catch (e) {}
-    modal.innerHTML = html
+    modal.innerHTML = content
   }
 
   // Set title
@@ -73,6 +75,7 @@ window.closeModal = function (el) {
   // Reset content
   modal.style.display = 'none'
   modal.textContent = ''
+  modal.classList.remove('modal-current')
 
   // Enable scroll
   document.body.classList.remove('modal-open')
