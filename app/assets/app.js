@@ -91,6 +91,7 @@ window.openModal = async function (el) {
     }
   }
   document.addEventListener('keydown', window.modalTrap)
+  first.focus()
 }
 
 window.closeModal = function (el) {
