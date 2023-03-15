@@ -60,43 +60,6 @@ window.openModal = async function (el, fn) {
   if (typeof fn == 'function') {
     await fn()
   }
-
-  // Trap focus
-  var focusable = modal.querySelectorAll(
-    [
-      'button:not([disabled])',
-      '[href]',
-      'input:not([disabled])',
-      'select:not([disabled])',
-      'textarea:not([disabled])',
-      '[tabindex]:not([tabindex="-1"]):not([disabled])',
-      'details:not([disabled])',
-      'summary:not(:disabled)'
-    ].join(',')
-  )
-
-  var first = focusable[0]
-  var last = focusable[focusable.length - 1]
-
-  window.modalTrap = function (e) {
-    var tab = e.key == 'Tab' || e.keyCode == 9
-    if (!tab) {
-      return
-    }
-    if (e.shiftKey) {
-      if (document.activeElement == first) {
-        e.preventDefault()
-        last.focus()
-      }
-    } else {
-      if (document.activeElement == last) {
-        e.preventDefault()
-        first.focus()
-      }
-    }
-  }
-  document.addEventListener('keydown', window.modalTrap)
-  first.focus()
 }
 
 window.closeModal = function (el) {
@@ -112,12 +75,6 @@ window.closeModal = function (el) {
     node.appendChild(content.firstElementChild)
   }
   delete window.modalSource
-
-  // Remove modal trap listener
-  if (typeof window.modalTrap == 'function') {
-    document.removeEventListener('keydown', window.modalTrap)
-  }
-  delete window.modalTrap
 
   // Reset content
   modal.style.display = 'none'
