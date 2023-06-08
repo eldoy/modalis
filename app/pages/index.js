@@ -41,8 +41,10 @@ module.exports = function () {
     </div>
     <div class="content" style="display:none">
       <div>
-        <input type="checkbox" />
-        ${content()}
+        <p>
+          <input type="checkbox" /> This checkbox stays checked between opens
+        </p>
+        <p>This content is from the DOM.</p>
       </div>
     </div>
     <div class="modal"></div>
