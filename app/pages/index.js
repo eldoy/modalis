@@ -48,5 +48,13 @@ module.exports = function () {
     <div class="modal"></div>
     <div class="prompt"></div>
     <div class="modal-layout">${modal()}</div>
+    <script>
+      var modal = document.querySelector('.modal')
+      modal.addEventListener('click', function (event) {
+        if (event.target == modal) {
+          closeModal('.modal')
+        }
+      })
+    </script>
   `)
 }
