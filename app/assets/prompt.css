@@ -8,26 +8,26 @@
   background: rgba(255, 255, 255, 0.9);
 }
 
-.prompt .prompt-frame {
+.prompt .modal-frame {
   max-width: 600px;
   margin: 0 auto;
 }
 
-.prompt .prompt-border {
+.prompt .modal-border {
   background: #fff;
   border: 1px solid #ccc;
   margin: 1rem;
   overflow: hidden;
 }
 
-.prompt .prompt-header {
+.prompt .modal-header {
   background: #dfdfdf;
   color: #fff;
   text-align: right;
   padding: 0.3rem;
 }
 
-.prompt .prompt-content {
+.prompt .modal-content {
   padding: 1rem;
   min-height: 100px;
   max-height: calc(100vh - 5rem);

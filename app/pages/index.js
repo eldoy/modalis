@@ -31,7 +31,7 @@ module.exports = function () {
           data-modal=".prompt"
           data-href="/inner"
         >
-          Open prompt with custom css and layout
+          Open prompt with custom CSS and layout
         </button>
       </section>
       <br />
