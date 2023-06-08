@@ -8,6 +8,7 @@ module.exports = function layout(content) {
         <title>Modalis</title>
         <link href="/app.css" rel="stylesheet" />
         <link href="/modal.css" rel="stylesheet" />
+        <link href="/prompt.css" rel="stylesheet" />
         <script src="/app.js"></script>
       </head>
       <body>

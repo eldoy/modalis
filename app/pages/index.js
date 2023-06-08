@@ -25,6 +25,15 @@ module.exports = function () {
           Open modal with content from the DOM
         </button>
       </section>
+      <section>
+        <button
+          onclick="openModal(this)"
+          data-modal=".prompt"
+          data-href="/inner"
+        >
+          Open prompt with custom css and layout
+        </button>
+      </section>
       <br />
       <p>
         <small>Created by <a href="https://eldoy.com">Eldøy Projects</a></small>

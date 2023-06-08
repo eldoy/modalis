@@ -2,6 +2,16 @@ module.exports = function () {
   return /* HTML */ `
   <p><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta cumque sequi beatae dolores eos deleniti voluptates expedita ipsum veniam nobis quisquam et nisi, hic nemo vitae, nam repellendus ullam at.</strong></p>
 
+  <p>
+    <button
+      onclick="openModal(this)"
+      data-modal=".prompt"
+      data-href="/inner"
+    >
+      Open modal prompt on top of modal
+    </button>
+  </p>
+
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quam quibusdam nulla illo ipsam error molestiae beatae modi, culpa cum totam ducimus, vel consequuntur obcaecati doloribus eveniet aut enim quos?</p>
   <p>Asperiores, necessitatibus voluptate nobis quis animi exercitationem mollitia quia fuga deserunt. Aspernatur, sed, incidunt omnis fugit quia deleniti sint aut ipsam repellat optio quod esse recusandae molestiae voluptates odio consectetur.</p>
 
