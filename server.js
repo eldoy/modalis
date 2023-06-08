@@ -5,10 +5,10 @@ const popup = require('./app/pages/popup.js')
 
 app.get('/', async function (req, res) {
   res.setHeader('content-type', 'text/html')
-  return await page()
+  return page()
 })
 
-app.get('/modal', async function (req, res) {
+app.get('/popup', async function (req, res) {
   res.setHeader('content-type', 'text/html')
-  return await popup()
+  return popup()
 })

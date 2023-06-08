@@ -1,6 +1,6 @@
 const modal = require('../layouts/modal.js')
-const text = require('../views/text.js')
+const content = require('../views/content.js')
 
-module.exports = async function () {
-  return modal(text())
+module.exports = function () {
+  return modal(content())
 }

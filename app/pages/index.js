@@ -1,27 +1,43 @@
-const layout = require('../layouts/layout.js')
+const layout = require('../layouts/main.js')
 const modal = require('../layouts/modal.js')
-const text = require('../views/text.js')
+const content = require('../views/content.js')
 
-module.exports = async function () {
+module.exports = function () {
   return layout(/* HTML */ `
-    <h1>Hello</h1>
-    <button onclick="openModal(this)" data-modal=".modal" data-href="/modal">
-      Open modal with content from server
-    </button>
-    <button
-      onclick="openModal(this)"
-      data-modal=".modal"
-      data-source=".content"
-    >
-      Open modal with content from the DOM
-    </button>
+    <div class="home">
+      <h1>Modalis.</h1>
+      <p>This is a demo of the modalis library.</p>
+      <section>
+        <button
+          onclick="openModal(this)"
+          data-modal=".modal"
+          data-href="/popup"
+        >
+          Open modal with content from server
+        </button>
+      </section>
+      <section>
+        <button
+          onclick="openModal(this)"
+          data-modal=".modal"
+          data-source=".content"
+        >
+          Open modal with content from the DOM
+        </button>
+      </section>
+      <br />
+      <p>
+        <small>Created by <a href="https://eldoy.com">Eldøy Projects</a></small>
+      </p>
+    </div>
     <div class="content" style="display:none">
       <div>
         <input type="checkbox" />
-        ${text()}
+        ${content()}
       </div>
     </div>
     <div class="modal"></div>
+    <div class="prompt"></div>
     <div class="modal-layout">${modal()}</div>
   `)
 }
