@@ -4,7 +4,7 @@
   "description": "Modal dialog with built in loading of assets",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "WAVEORB_PORT=8990 nodemon -e '*' -i dist -x waveorb serve",
     "test": "echo 'no tests found'",
     "build": "node scripts/build.js"
   },
@@ -16,6 +16,7 @@
   "license": "MIT",
   "devDependencies": {
     "extras": "^0.12.0",
-    "sirloin": "^0.23.2"
+    "haka": "^0.13.0",
+    "waveorb": "^0.36.9"
   }
 }

@@ -1,9 +1,7 @@
-const layout = require('../layouts/main.js')
-const modal = require('../layouts/modal.js')
-const content = require('../views/content.js')
+module.exports = async function ($) {
+  $.page.title = 'Modal demo'
 
-module.exports = function () {
-  return layout(/* HTML */ `
+  return /* HTML */ `
     <div class="home">
       <h1>Modalis.</h1>
       <p>This is a demo of the modalis library.</p>
@@ -49,7 +47,7 @@ module.exports = function () {
     </div>
     <div class="modal"></div>
     <div class="prompt"></div>
-    <div class="modal-layout">${modal()}</div>
+    <div class="modal-layout">${await $.app.layouts.modal($)}</div>
     <script>
       var modal = document.querySelector('.modal')
       modal.addEventListener('click', function (event) {
@@ -58,5 +56,5 @@ module.exports = function () {
         }
       })
     </script>
-  `)
+  `
 }

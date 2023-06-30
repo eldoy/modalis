@@ -1,11 +1,40 @@
-module.exports = function (content) {
+const { esc } = require('haka')
+
+module.exports = function ($) {
+  var title = $ ? $.page.title : ''
+  var klass = $ ? $.page.modalClass : ''
   return /* HTML */ `
-    <div class="modal-frame">
+    <div class="modal-frame ${klass}">
       <div class="modal-border">
         <div class="modal-header">
-          <button onclick="closeModal(this)" data-modal=".prompt">X</button>
+          <div class="modal-title">${esc(title)}</div>
+          <div class="modal-close">
+            <div class="close">
+              <a
+                href="#"
+                onclick="closeModal('.prompt', { scroll: false });return false"
+              >
+                <img
+                  class="cross"
+                  src="/img/cross-circle.svg"
+                  alt="Lukk vindu"
+                  width="40p"
+                  height="40"
+                />
+                <img
+                  class="minus"
+                  src="/img/minus-circle.svg"
+                  alt="Lukk vindu"
+                  width="40"
+                  height="40"
+                  title="Lukk"
+                />
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="modal-content">${content || ''}</div>
+        <div class="notify"><div class="flash"></div></div>
+        <div class="modal-content">${$.page.content || ''}</div>
       </div>
     </div>
   `

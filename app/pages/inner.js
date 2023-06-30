@@ -1,5 +1,6 @@
-const prompt = require('../layouts/prompt.js')
+module.exports = async function ($) {
+  $.page.title = 'Confirmation'
+  $.page.layout = 'prompt'
 
-module.exports = function () {
-  return prompt(/* HTML */ `<p>Are you sure?</p>`)
+  return /* HTML */ `<p>Are you sure?</p>`
 }

@@ -3,6 +3,10 @@ window.openModal = async function (el, fn) {
   window.scrollPosition = window.scrollY
   document.body.classList.add('modal-open')
 
+  document.querySelectorAll('.flash').forEach(function (el) {
+    el.textContent = ''
+  })
+
   // Find modal element
   var name = typeof el == 'string' ? el : el.getAttribute('data-modal')
   var modal = document.querySelector(name || '.modal')
@@ -62,7 +66,7 @@ window.openModal = async function (el, fn) {
   }
 }
 
-window.closeModal = function (el) {
+window.closeModal = function (el, opt = {}) {
   // Find modal element
   var name = typeof el == 'string' ? el : el.getAttribute('data-modal')
   var modal = document.querySelector(name || '.modal')
@@ -82,8 +86,10 @@ window.closeModal = function (el) {
   modal.classList.remove('modal-current')
 
   // Enable scroll
-  document.body.classList.remove('modal-open')
-  if (window.scrollPosition) {
-    window.scrollTo(0, window.scrollPosition)
+  if (opt.scroll !== false) {
+    document.body.classList.remove('modal-open')
+    if (window.scrollPosition) {
+      window.scrollTo(0, window.scrollPosition)
+    }
   }
 }
