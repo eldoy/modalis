@@ -9,7 +9,7 @@ module.exports = function layout(content) {
         <link href="/app.css" rel="stylesheet" />
         <link href="/modal.css" rel="stylesheet" />
         <link href="/prompt.css" rel="stylesheet" />
-        <script src="/app.js"></script>
+        <script src="/modal.js"></script>
       </head>
       <body>
         <main>${content}</main>

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "test": "echo 'no tests found'"
+    "test": "echo 'no tests found'",
+    "build": "node scripts/build.js"
   },
   "repository": {
     "type": "git",
@@ -14,6 +15,7 @@
   "author": "Vidar Eldøy <vidar@eldoy.com>",
   "license": "MIT",
   "devDependencies": {
+    "extras": "^0.12.0",
     "sirloin": "^0.23.2"
   }
 }
