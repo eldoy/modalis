@@ -28,7 +28,6 @@ var files = ['assets/css/modal.css', 'assets/js/modal.js', 'layouts/modal.js']
 for (var file of files) {
   var dest = join(dir, 'app', file)
   var path = dirname(dest)
-  console.log({ dest, dir, path })
   if (!exist(path)) mkdir(path)
   var command = `cp ${base}/${file} ${dest}`
   console.log(command)
