@@ -23,7 +23,13 @@ if (!exist(dir)) {
 console.log(`Installing files in ${dir}`)
 
 var base = 'dist'
-var files = ['assets/css/modal.css', 'assets/js/modal.js', 'layouts/modal.js']
+var files = [
+  'assets/img/cross-circle.svg',
+  'assets/img/minus-circle.svg',
+  'assets/css/modal.css',
+  'assets/js/modal.js',
+  'layouts/modal.js'
+]
 
 for (var file of files) {
   var dest = join(dir, 'app', file)
