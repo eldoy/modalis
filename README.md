@@ -4,7 +4,7 @@ Modal dialog with built in loading of HTML.
 
 ### Usage
 
-First copy `dist/assets/modal.css` and `dist/assets/modal.js` to your app assets. Use `dist/layouts/modal.js` for some working HTML you can use for your modal layout.
+First copy `dist/assets/css/modal.css` and `dist/assets/js/modal.js` to your app assets. Use `dist/layouts/modal.js` for some working HTML you can use for your modal layout.
 
 Included is also an example of a "prompt", for use with a modal inside the modal.
 
