@@ -19,7 +19,7 @@ module.exports = function ($) {
                   class="cross"
                   src="/img/cross-circle.svg"
                   alt="Lukk vindu"
-                  width="40p"
+                  width="40"
                   height="40"
                 />
                 <img
