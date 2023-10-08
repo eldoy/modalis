@@ -54,7 +54,7 @@ To load insert content from the DOM, use `data-source`:
 </button>
 ```
 
-This technique requires a modal layout to included in the DOM:
+This technique requires a modal layout to be included in the DOM:
 ```html
 <body>
   ...
